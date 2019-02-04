@@ -1,10 +1,10 @@
-#include "mymodule.h"
+#include "Communication.h"
 
 #include <iostream>
 #include <qi/log.hpp>
 
 
-MyModule::MyModule(boost::shared_ptr<AL::ALBroker> broker,
+Communication::Communication(boost::shared_ptr<AL::ALBroker> broker,
                    const std::string& name)
   : AL::ALModule(broker, name), tts_(getParentBroker())
 {
@@ -21,7 +21,7 @@ MyModule::MyModule(boost::shared_ptr<AL::ALBroker> broker,
    * BIND_METHOD(<method_reference>);
    */
   functionName("printHello", getName(), "Print hello to the world");
-  BIND_METHOD(MyModule::printHello);
+  BIND_METHOD(Communication::printHello);
 
   /**
    * addParam(<attribut_name>, <attribut_descrption>);
@@ -30,7 +30,7 @@ MyModule::MyModule(boost::shared_ptr<AL::ALBroker> broker,
    */
   functionName("printWord", getName(), "Print a given word.");
   addParam("word", "The word to be print.");
-  BIND_METHOD(MyModule::printWord);
+  BIND_METHOD(Communication::printWord);
 
   /**
    * setReturn(<return_name>, <return_description>);
@@ -39,11 +39,11 @@ MyModule::MyModule(boost::shared_ptr<AL::ALBroker> broker,
    */
   functionName("returnTrue", getName(), "Just return true");
   setReturn("boolean", "return true");
-  BIND_METHOD(MyModule::returnTrue);
+  BIND_METHOD(Communication::returnTrue);
 
   functionName("sayWord", getName(), "Says the word");
   setReturn("boolean", "return true if robot says the word");
-  BIND_METHOD(MyModule::sayWord);
+  BIND_METHOD(Communication::sayWord);
 
   // If you had other methods, you could bind them here...
   /**
@@ -52,12 +52,12 @@ MyModule::MyModule(boost::shared_ptr<AL::ALBroker> broker,
    */
 }
 
-MyModule::~MyModule()
+Communication::~Communication()
 {
   
 }
 
-void MyModule::init()
+void Communication::init()
 {
   /**
    * Init is called just after construction.
@@ -67,22 +67,22 @@ void MyModule::init()
 }
 
 
-void MyModule::printHello()
+void Communication::printHello()
 {
   std::cout << "Hello!" << std::endl;
 }
 
-void MyModule::printWord(const std::string &word)
+void Communication::printWord(const std::string &word)
 {
   std::cout << word << std::endl;
 }
 
-bool MyModule::returnTrue()
+bool Communication::returnTrue()
 {
   return true;
 }
 
-bool MyModule::sayWord(const std::string& word){
+bool Communication::sayWord(const std::string& word){
   std::cout << "Saying the phrase in the console..." << std::endl;
   std::cout << word << std::endl;
   try

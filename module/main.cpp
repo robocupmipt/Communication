@@ -1,4 +1,4 @@
-#include "mymodule.h"
+#include "Communication.h"
 #include <boost/shared_ptr.hpp>
 #include <alcommon/albroker.h>
 #include <alcommon/albrokermanager.h>
@@ -23,7 +23,7 @@ extern "C"
   }
 } // extern "C"
 
-#ifdef MYMODULE_IS_REMOTE
+#ifdef COMMUNICATION_IS_REMOTE
 int main(int argc, char* argv[])
 {
   // pointer to createModule

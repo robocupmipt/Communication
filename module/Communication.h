@@ -1,5 +1,5 @@
-#ifndef MY_MODULE_H
-# define MY_MODULE_H
+#ifndef COMMUNICATION_H
+# define COMMUNICATION_H
 
 #include <iostream>
 #include <alcommon/albroker.h>
@@ -16,13 +16,13 @@ namespace AL
  * This class inherits AL::ALModule. This allows it to bind methods
  * and be run as a remote executable within NAOqi
  */
-class MyModule : public AL::ALModule
+class Communication : public AL::ALModule
 {
 public:
-  MyModule(boost::shared_ptr<AL::ALBroker> broker,
+  Communication(boost::shared_ptr<AL::ALBroker> broker,
            const std::string &name);
 
-  virtual ~MyModule();
+  virtual ~Communication();
 
   /**
    * Overloading ALModule::init().
@@ -44,4 +44,4 @@ public:
 private:
   AL::ALTextToSpeechProxy tts_;
 };
-#endif // MY_MODULE_H
+#endif // COMMUNICATION_H
