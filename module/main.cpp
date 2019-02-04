@@ -13,7 +13,7 @@ extern "C"
     AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
     AL::ALBrokerManager::getInstance()->addBroker(broker);
     // create module instances
-    AL::ALModule::createModule<MyModule>(broker, "MyModule");
+    AL::ALModule::createModule<Communication>(broker, "Communication");
     return 0;
   }
 
@@ -30,6 +30,6 @@ int main(int argc, char* argv[])
   TMainType sig = &_createModule;
 
   // call main
-  return ALTools::mainFunction("MyModule", argc, argv, sig);
+  return ALTools::mainFunction("Communication", argc, argv, sig);
 }
 #endif

@@ -1,7 +1,0 @@
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/install.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/list_install_components.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/rebuild_cache.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/mymodule.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/install/strip.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/install/local.dir
-/home/vlad/studies/template/mymodule-example/build-desktop/CMakeFiles/edit_cache.dir
