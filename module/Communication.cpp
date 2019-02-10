@@ -2,84 +2,111 @@
 
 #include <iostream>
 #include <qi/log.hpp>
+#include <unistd.h>
 
+
+std::string retState(RobotStates robotState);
 
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker,
                    const std::string& name)
   : AL::ALModule(broker, name), tts_(getParentBroker())
 {
-  // Describe the module here. This will appear on the webpage
-  setModuleDescription("My own custom module.");
-
-  /**
-   * Define callable methods with their descriptions:
-   * This makes the method available to other cpp modules
-   * and to python.
-   * The name given will be the one visible from outside the module.
-   * This method has no parameters or return value to describe
-   * functionName(<method_name>, <class_name>, <method_description>);
-   * BIND_METHOD(<method_reference>);
-   */
-  functionName("printHello", getName(), "Print hello to the world");
-  BIND_METHOD(Communication::printHello);
-
-  /**
-   * addParam(<attribut_name>, <attribut_descrption>);
-   * This enables to document the parameters of the method.
-   * It is not compulsory to write this line.
-   */
-  functionName("printWord", getName(), "Print a given word.");
-  addParam("word", "The word to be print.");
-  BIND_METHOD(Communication::printWord);
-
-  /**
-   * setReturn(<return_name>, <return_description>);
-   * This enables to document the return of the method.
-   * It is not compulsory to write this line.
-   */
-  functionName("returnTrue", getName(), "Just return true");
-  setReturn("boolean", "return true");
-  BIND_METHOD(Communication::returnTrue);
-
-  functionName("sayWord", getName(), "Says the word");
-  setReturn("boolean", "return true if robot says the word");
-  BIND_METHOD(Communication::sayWord);
-
-  // If you had other methods, you could bind them here...
-  /**
-   * Bound methods can only take const ref arguments of basic types,
-   * or AL::ALValue or return basic types or an AL::ALValue.
-   */
+  setReturn("boolean", "return true if it was succesfully");
+  BIND_METHOD(Communication::sendRobotState);
 }
 
 Communication::~Communication()
 {
-  
+
 }
 
 void Communication::init()
 {
-  /**
-   * Init is called just after construction.
-   * Do something or not
-   */
-  std::cout << returnTrue() << std::endl;
+
 }
 
-
-void Communication::printHello()
+std::string retState(RobotStates robotState)
 {
-  std::cout << "Hello!" << std::endl;
+	std::string ret;
+	switch(robotState)
+	{
+		case Initial:
+			ret = "Initial";
+			break;
+		case Ready:
+			ret = "Ready";
+			break;
+		case Set:
+			ret = "Set";
+			break;
+		case Playing:
+			ret = "Playing";
+			break;
+		case Penalized:
+			ret = "Penalized";
+			break;
+		case Finished:
+			ret = "Finished";
+			break;
+		case NotDefined:
+		default:
+			ret = "NotDefined";
+			break;
+	}
+
+	return ret;
 }
 
-void Communication::printWord(const std::string &word)
+bool Communication::sendRobotState()
 {
-  std::cout << word << std::endl;
+	bool error = false;
+
+	if(curRobotState == NotDefined)
+	{
+		std::cout << "Current state = NotDefined. Can't transmit state.\n";
+		return error;
+	}
+
+	std::string stringState = retState(curRobotState);
+	// here should be call for transmit state
+	std::cout << "Current state = " << stringState << " transmit succesfully.\n";
 }
 
-bool Communication::returnTrue()
+void Communication::startModule()
 {
-  return true;
+	int pid = fork();
+	if(pid == 0)
+		Communication::startReceiveLoop();
+	else
+		Communication::startTransmitLoop();
+}
+
+void Communication::startTransmitLoop()
+{
+	while(1)
+	{
+		Communication::transmitToGC();
+		sleep(1);
+	}
+}
+
+void Communication::startReceiveLoop()
+{
+	while(1)
+	{
+		Communication::receiveFromGC();
+		sleep(1);
+	}
+}
+
+bool Communication::transmitToGC()
+{
+  std::cout << "transmit succesfully.\n";
+}
+
+bool Communication::receiveFromGC()
+{
+  std::cout << "receive succesfully.\n";
 }
 
 bool Communication::sayWord(const std::string& word){
