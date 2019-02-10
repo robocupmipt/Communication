@@ -1,5 +1,6 @@
 #pragma once
-
+#include "sys/socket.h"
+#include "sys/types.h"
 
 typedef int data_t;
 typedef int team_info_t;
@@ -17,10 +18,11 @@ class Udp
 		int 			getSock();
 		void 			Dump();
 	private:
-		data_t      _data;
-		team_info_t _team_info;
-		bool 	    _connected;
-		int 	    _sock;
+		data_t      	    _data;
+		team_info_t 	    _team_info;
+		bool 	     	    _connected;
+		int 	    	    _sock;
+		struct* sockaddr_in _target;
 };
 
 

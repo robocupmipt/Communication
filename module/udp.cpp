@@ -1,13 +1,20 @@
-#include "udp.h"
+#include "udp.hpp"
 
 
 Udp::Udp():
 	_data(0),
 	_team_info(0),
 	_connected(0),
-	_sock(0)
+	_sock(0),
+	_target(new struct sockaddr_in)
 {
 	std::cout << "Udp constructor" << std::endl;
+	_sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP); // pretty constants
+	if(_sock == -1)
+	{
+		std::cout << "Error in Socket constructor!" << std::endl;
+		perror("socket");
+	}
 };
 
 ~Udp()
