@@ -1,6 +1,5 @@
 # Configure + Build
-+ qibuild configure -c desktop
-+ qibuild configure -c desktop
++ qibuild configure -c <toolchain name>
 + qibuild make -c desktop
 # Structure:
 Game controller files are conducted with gameControllData headers. 
