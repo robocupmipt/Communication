@@ -1,6 +1,6 @@
 # Configure + Build
 + qibuild configure -c <toolchain name>
-+ qibuild make -c desktop
++ qibuild make -c <toolchain name>
 # Structure:
 Game controller files are conducted with gameControllData headers. 
 Udp class uses the same data type to transfer information
