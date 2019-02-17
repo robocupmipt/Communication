@@ -5,24 +5,12 @@
 #include <alcommon/albroker.h>
 #include <alproxies/altexttospeechproxy.h>
 
+/*
 #define SPL_STANDARD_MESSAGE_STRUCT_HEADER "SPL"
 #define SPL_STANDARD_MESSAGE_STRUCT_VERSION 7
 #define PLAYER_NUM 6
 #define TEAM_NUM 1
 #define SPL_STANDARD_MESSAGE_DATA_SIZE 474
-
-typedef enum RobotStates
-{
-	NotDefined,
-	Initial,
-	Ready,
-	Set,
-	Playing,
-	Penalized,
-	Finished
-} RobotStates;
-
-RobotStates curRobotState = NotDefined;
 
 char header[4] = SPL_STANDARD_MESSAGE_STRUCT_HEADER;
 uint8_t version = SPL_STANDARD_MESSAGE_STRUCT_VERSION;
@@ -45,6 +33,7 @@ typedef struct DataForMessage
 	// 1 means that the robot is fallen, 0 means that the robot can play
 	uint8_t fallen;
 } DataForMessage;
+*/
 
 namespace AL
 {
@@ -67,9 +56,6 @@ public:
   void startTransmitLoop();
   // Start loop receive/sendState/receive
   void startReceiveLoop();
-
-  std::string retState(RobotStates robotState);
-
 
   //--------- Functions to communicate with Game Controller
 
@@ -103,4 +89,5 @@ private:
   AL::ALTextToSpeechProxy tts_;
   boost::shared_ptr<AL::ALBroker> broker;
 };
+
 #endif // COMMUNICATION_H

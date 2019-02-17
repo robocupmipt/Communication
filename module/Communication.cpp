@@ -4,9 +4,6 @@
 #include <qi/log.hpp>
 #include <unistd.h>
 
-
-std::string retState(RobotStates robotState);
-
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker,
                    const std::string& name)
   : AL::ALModule(broker, name), tts_(getParentBroker())
@@ -25,6 +22,21 @@ void Communication::init()
 
 }
 
+/*
+std::string retState(RobotStates robotState);
+
+typedef enum RobotStates
+{
+	NotDefined,
+	Initial,
+	Ready,
+	Set,
+	Playing,
+	Penalized,
+	Finished
+} RobotStates;
+
+RobotStates curRobotState = NotDefined;
 std::string retState(RobotStates robotState)
 {
 	std::string ret;
@@ -56,36 +68,39 @@ std::string retState(RobotStates robotState)
 
 	return ret;
 }
+*/
 
 bool Communication::sendRobotState()
 {
 	bool error = false;
 
+	/*
 	if(curRobotState == NotDefined)
 	{
 		std::cout << "Current state = NotDefined. Can't transmit state.\n";
 		return error;
 	}
 
-	std::string stringState = retState(curRobotState);
+	std::string stringState = retState(ComState::curRobotState);
 	// here should be call for transmit state
 	std::cout << "Current state = " << stringState << " transmit succesfully.\n";
+	*/
 }
 
 void Communication::startModule()
 {
 	int pid = fork();
 	if(pid == 0)
-		Communication::startReceiveLoop();
+		startReceiveLoop();
 	else
-		Communication::startTransmitLoop();
+		startTransmitLoop();
 }
 
 void Communication::startTransmitLoop()
 {
 	while(1)
 	{
-		Communication::transmitToGC();
+		transmitToGC();
 		sleep(1);
 	}
 }
@@ -94,7 +109,7 @@ void Communication::startReceiveLoop()
 {
 	while(1)
 	{
-		Communication::receiveFromGC();
+		receiveFromGC();
 		sleep(1);
 	}
 }
