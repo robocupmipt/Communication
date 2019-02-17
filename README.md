@@ -1,6 +1,9 @@
 # Configure + Build
 + qibuild configure -c "toolchain name"
 + qibuild make -c "toolchain name"
+# Set up Game Controller
++ move to ~/GameController2018/
++ java -jar GameController.jar
 # Structure:
 Game controller files are conducted with gameControllData headers. 
 Udp class uses the same data type to transfer information
