@@ -1,15 +1,21 @@
 # Configure + Build
 + qibuild configure -c "toolchain name"
 + qibuild make -c "toolchain name"
-# Set up Game Controller
+# Set up Game Controller & Tester
 + move to ~/GameController2018/
 + java -jar GameController.jar
++ java -jar GameControllerTester.jar
 # Structure:
 Game controller files are conducted with gameControllData headers. 
 Udp class uses the same data type to transfer information
 # Port Numbers
-File with port numbers:
++ File with port numbers:  
 /GameController2018/include/RoboCupGameControlData.h
++ GC data transfering:  
+Using broadcast address /192.168.1.255  
+Listening on address /192.168.1.68  
+# Achievements
++ Transfering messages from GC to GCTester using udp protocol and Linux Socket
 # Current ideas about GC
 + Run Game Controller
 + Analyse GameControlData class
