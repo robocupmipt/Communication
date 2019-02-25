@@ -17,9 +17,19 @@ Udp::Udp():
 	}
 };
 
-~Udp()
+Udp::~Udp()
 {
+	if( (close(_sock) ) < 0)
+	{
+		writeLog(("can't close socket!\n"));
+	}
+
 	std::cout << "Udp destructor" << std::endl;
+}
+
+inline void Udp::writeLog(const char* error)
+{
+	std::cout << error << std::endl;
 }
 
 
@@ -30,13 +40,13 @@ const int Udp::getTime() const
 	return 0;
 }
 
-const & data_t Udp::getData() const
+const data_t & Udp::getData() const
 {
 	return _data;
 }
 
 
-const & team_info_t Udp::getTeamInfo() const
+const team_info_t & Udp::getTeamInfo() const
 {
 	return _team_info;
 }
@@ -47,7 +57,7 @@ const bool Udp::isConnected() const
 }
 
 
-const int Udp::getSock()
+const int Udp::getSock() const
 {
 	return _sock;
 }
@@ -57,7 +67,7 @@ const int Udp::getSock()
 
 void Udp::Dump()
 {
-	std::cout << "Soket: " << sock << std::endl;
+	std::cout << "Soket: " << _sock << std::endl;
 	std::cout << "isConnected: " << _connected << std::endl;
 }
 
