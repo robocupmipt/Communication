@@ -29,7 +29,7 @@ Write module the same way.
 + Cool way  
 Use AL:: library and Brocker API to handler the START message.  
 We can write separate class in which we'll use brockers to call methods from other modules
-+ Current way
++ Current way  
 We have to write special class, which will contain data and team info
 # Test abilities
 WiFi local network
