@@ -37,3 +37,9 @@ WiFi local network
 On first PC GameController is executed. This PS is a message sender. Messages contains information about commands, game style, timeout etc. The second computer reads GCData from UDP port and parses data in readable way.
 We can provide a reliable connection and data transfering. After that we can start the next step  
 + Comming soon ...
+
+# address finding out  
+My PC 
+
+  wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+  inet 192.168.1.68
