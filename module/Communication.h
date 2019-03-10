@@ -53,6 +53,7 @@ public:
 
 private:
   AL::ALTextToSpeechProxy tts_;
+
   boost::shared_ptr<AL::ALBroker> broker;
 };
 
