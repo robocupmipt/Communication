@@ -46,6 +46,14 @@ My PC
 # The solution of transmission problem
 We used two programms written by [Vlad](https://github.com/MolVlad) in terms of OS course: server.c & client.c
 On the first PC we made a broadcast point with GC. On the second one there was a running client program. This program reads data from all the users in a network, and we saw a broadcasting messages in Robocup GameController standart data type.  
+
+# Toolchain problem
+Coding a Communication module we faced a problem with boost warnings layout and CMakeList specific syntax.  
+We added a special header file which had to provide us an ability to ignore warnings. We added prefixes to Cmake flags.  
+Both of these features didn't work properly.  
+Then we rewrote a Communication module with new toolchain and now It works!  
+We creates a connection dump to see the data transmission between robot & PC with GC. 
+
 # Current task  
 + write a wrapper class which provides reading, writing and parsing data  
 + execute the program from nao robot
