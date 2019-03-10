@@ -49,10 +49,23 @@ On the first PC we made a broadcast point with GC. On the second one there was a
 
 # Toolchain problem
 Coding a Communication module we faced a problem with boost warnings layout and CMakeList specific syntax.  
-We added a special header file which had to provide us an ability to ignore warnings. We added prefixes to Cmake flags.  
+We added a special header file which had to provide us an ability to ignore warnings:  
+
+    #include <boost/config/warning_disable.hpp>
+
+We added prefixes to Cmake flags this way:
+
+    SET(QIBUILD_COMPILE_FLAGS "-isystem")
+    add_definitions(${QIBUILD_COMPILE_FLAGS})
+or
+
+    target_compile_options(all PRIVATE -isystem)
+  
 Both of these features didn't work properly.  
 Then we rewrote a Communication module with new toolchain and now It works!  
 We creates a connection dump to see the data transmission between robot & PC with GC. 
+
+![UDP TRANSMISSION DUMP](https://github.com/SokolovVadim/Communication/blob/master/module/Dump_screen.jpg)
 
 # Current task  
 + write a wrapper class which provides reading, writing and parsing data  
