@@ -1,5 +1,16 @@
 cmake_minimum_required(VERSION 2.8)
 
+# try to disable boost warnings
+
+
+SET(QIBUILD_COMPILE_FLAGS "-isystem")
+
+add_definitions(${QIBUILD_COMPILE_FLAGS})
+
+
+# target_compile_options(all PRIVATE -isystem)
+
+
 # Give a name to the project.
 project(Communication)
 
@@ -33,4 +44,5 @@ endif()
 # Tell CMake that mymodule depends on ALCOMMON and ALPROXIES.
 # This will set the libraries to link mymodule with,
 # the include paths, and so on
-qi_use_lib(Communication ALCOMMON ALPROXIES BOOST)
+set (CMAKE_CXX_FLAGS "-isystem")
+qi_use_lib(Communication ALCOMMON ALPROXIES BOOST )

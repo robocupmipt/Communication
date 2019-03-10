@@ -4,11 +4,12 @@
 #include <qi/log.hpp>
 #include <unistd.h>
 
+
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name)
   : AL::ALModule(broker, name), tts_(getParentBroker())
 {
-  setReturn("boolean", "return true if it was succesfully");
-  BIND_METHOD(sendRobotState);
+  //setReturn("boolean", "return true if it was succesfully");
+  BIND_METHOD(Communication::sendRobotState);
 }
 
 Communication::~Communication()
@@ -20,6 +21,13 @@ void Communication::init()
 {
 
 }
+
+
+bool Communication::sendRobotState()
+{
+
+}
+
 
 void Communication::startModule()
 {

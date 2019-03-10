@@ -2,8 +2,12 @@
 #define COMMUNICATION_H
 
 #include <iostream>
+#include <alcommon/almodulecore.h>
 #include <alcommon/albroker.h>
+#include <alcommon/albrokermanager.h>
 #include <alproxies/altexttospeechproxy.h>
+//#include <boost/config/warning_disable.hpp>
+#include <qi/log.hpp>
 
 namespace AL
 {

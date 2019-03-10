@@ -15,7 +15,7 @@
 #include<sys/wait.h>
 
 #define BUF_SIZE 1000
-#define PORT 51000
+#define PORT 3939
 
 #define CHECK(nameFunction, retValue)				\
 do {								\
