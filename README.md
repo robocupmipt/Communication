@@ -47,5 +47,5 @@ My PC
 We used two programms written by [Vlad](https://github.com/MolVlad) in terms of OS course: server.c & client.c
 On the first PC we made a broadcast point with GC. On the second one there was a running client program. This program reads data from all the users in a network, and we saw a broadcasting messages in Robocup GameController standart data type.  
 # Current task  
-+ write a wripper class which provides reading, writing and parsing data  
++ write a wrapper class which provides reading, writing and parsing data  
 + execute the program from nao robot
