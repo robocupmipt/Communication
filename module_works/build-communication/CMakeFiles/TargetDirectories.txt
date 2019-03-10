@@ -1,0 +1,7 @@
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/edit_cache.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/install/strip.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/rebuild_cache.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/list_install_components.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/install/local.dir
+/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/install.dir
