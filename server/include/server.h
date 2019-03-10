@@ -2,6 +2,7 @@
 #define SERVER_H
 
 #include"udp_config.h"
+#include"message.h"
 
 class Server
 {
@@ -11,6 +12,22 @@ class Server
 
   ~Server();
 
+  // To receive
+
+  struct GameControlData buf; // just buffer to recieve
+  int n;                      // number of received bytes
+
+  struct GameControlData gameControldata;
+
+  void receiveGCData();
+  void printBuf();
+
+  // To answer
+
+  struct ReturnData returnData;
+
+  void sendReturnData();
+
   private:
 
   // To configure socket
@@ -18,8 +35,8 @@ class Server
   int sockfd = 0;
   bool isAlWorks = true;
 
-  void CreateSocket();
-  void BindSocket();
+  void createSocket();
+  void bindSocket();
 
   // To configure addresses
 
@@ -27,20 +44,6 @@ class Server
 
   struct sockaddr_in servaddr, cliaddr; // struct for addresses
   int clilen;
-
-  // To receive
-
-  struct GameControlData buf; // just buffer to recieve
-  int n;  // number of received bytes
-  struct GameControlData gameControldata;
-
-  void receiveGCData();
-
-  // To answer
-
-  struct ReturnData returnData;
-
-  void sendReturnData();
 };
 
 #endif /* SERVER_H */

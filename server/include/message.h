@@ -1,6 +1,25 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+#define MAX_NUM_PLAYERS             6
+
+/* rUNSWift Addition: renamed from RobotInfo to PlayerInfo */
+struct PlayerInfo
+{
+  uint8_t pen;              // penalty state of the player
+  uint8_t secs;  // estimate of time till unpenalised
+};
+
+struct TeamInfo
+{
+  uint8_t teamNumber;           // unique team number
+  uint8_t teamColour;           // colour of the team
+  uint8_t score;                // team's score
+  uint8_t penaltyShot;          // penalty shot counter
+  uint16_t singleShots;         // bits represent penalty shot success
+  PlayerInfo players[MAX_NUM_PLAYERS]; // the team's players
+};
+
 struct GameControlData
 {
   char header[4];               // header to identify the structure
@@ -17,10 +36,16 @@ struct GameControlData
   uint8_t dropInTeam;           // number of team that caused last drop in
   uint16_t dropInTime;          // number of seconds passed since the last drop in. -1 (0xffff) before first dropin
   uint16_t secsRemaining;       // estimate of number of seconds remaining in the half
+  uint16_t secondaryTime;       // number of seconds shown as secondary time (remaining ready, until free ball, etc)
+  TeamInfo teams[2];
 };
 
 struct ReturnData
 {
   char header[4];
-}
+  uint8_t version;
+  uint8_t team;    // team number
+  uint8_t player;  // player number starts with 1
+  uint8_t message; // one of the three messages defined above
+};
 #endif /* MESSAGE_H */

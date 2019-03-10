@@ -2,14 +2,12 @@
 
 int main()
 {
+  Server server;
+
   while(1)
   {
-    /*
-    printf("%s\n", data.header);
-    printf("packNum:%d\n", data.packetNumber);
-    printf("state:%d\n", data.state);
-    printf("playerPerTeam:%d\n", data.playersPerTeam);
-    */
+    server.receiveGCData();
+    server.printBuf();
   }
 
   return 0;

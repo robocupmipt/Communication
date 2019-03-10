@@ -1,6 +1,6 @@
 PROJECT = server
 
-SOURCES = main.cpp server.cpp
+SOURCES = src/main.cpp src/server.cpp
 INCLUDES += -I include
 LIBS =
 DEFINES =
