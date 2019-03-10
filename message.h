@@ -1,7 +1,7 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
-struct RoboCupGameControlData
+struct GameControlData
 {
   char header[4];               // header to identify the structure
   uint16_t version;             // version of the data structure
@@ -19,4 +19,8 @@ struct RoboCupGameControlData
   uint16_t secsRemaining;       // estimate of number of seconds remaining in the half
 };
 
+struct ReturnData
+{
+  char header[4];
+}
 #endif /* MESSAGE_H */
