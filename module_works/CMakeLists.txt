@@ -10,7 +10,12 @@ find_package(qibuild)
 set(_srcs
     communication.cpp
     communication.hpp
-    main.cpp)
+    main.cpp
+    ./server/include/server.h
+    ./server/include/message.h
+    ./server/include/udp_config.h
+    ./server/src/server.cpp
+    )
 
 # Create a plugin, that is a shared library, and make
 # sure it is built in lib/naoqi
