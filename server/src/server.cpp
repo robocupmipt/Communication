@@ -40,7 +40,7 @@ void Server::bindSocket()
 
 void Server::receiveGCData()
 {
-  int clilen;
+  int clilen = sizeof(cliaddr);
   int n = recvfrom(sockfd, &receiveBuf, sizeof(receiveBuf) - 1, FLAGS_RECV_FROM, (struct sockaddr *) &cliaddr, (socklen_t *) &clilen);
 
   if(n < 0)
@@ -48,15 +48,6 @@ void Server::receiveGCData()
 
   checkBufAndCopy();
 }
-
-/*
-void Server::receiveGCData()
-{
-  int clilen;
-  int n = recvfrom(sockfd, &receiveBuf, sizeof(receiveBuf) - 1, FLAGS_RECV_FROM, (struct sockaddr *) &cliaddr, (socklen_t *)&clilen);
-
-}
-*/
 
 void Server::checkBufAndCopy()
 {
