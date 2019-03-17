@@ -4,6 +4,7 @@
 #include <iostream>
 #include <alcommon/albroker.h>
 #include <alproxies/altexttospeechproxy.h>
+#include "../include/server.h"
 
 namespace AL
 {
@@ -18,7 +19,7 @@ namespace AL
  */
 
 
-class Server;
+// class Server;
 
 //-----------------------------------------------------------------------------------
 
@@ -37,6 +38,11 @@ public:
 
   // Start loop transmit/wait/transmit
   void startTransmitLoop();
+
+  // print data dump
+
+  void printGCData();
+
   // Start loop receive/sendState/receive
   void startReceiveLoop();
 
@@ -67,7 +73,7 @@ public:
 private:
   AL::ALTextToSpeechProxy         tts_;
   boost::shared_ptr<AL::ALBroker> broker;
-  // Server                          server_;
+  Server                          server_;
 };
 
 #endif // MY_MODULE_H

@@ -1,13 +1,15 @@
 #include "../include/communication.hpp"
 
+
 #include <iostream>
 #include <qi/log.hpp>
+#include <unistd.h>
 
 
 //--------------------------------------------------------------------------------------------------------
 
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name)
-  : AL::ALModule(broker, name), tts_(getParentBroker())
+  : AL::ALModule(broker, name), tts_(getParentBroker()), server_()
 {
   //setReturn("boolean", "return true if it was succesfully");
   BIND_METHOD(Communication::sendRobotState);
@@ -33,10 +35,16 @@ bool Communication::sendRobotState()
 
 }
 
+void Communication::printGCData()
+{
+    server_.printGCData();
+}
+
 
 int Communication::startModule()
 {
-  int pid = fork();
+
+  pid_t pid = fork();
 
   if(pid == -1)
   {
@@ -49,6 +57,7 @@ int Communication::startModule()
   else
     startTransmitLoop();
   return 0;
+
 }
 
 void Communication::startTransmitLoop()
@@ -57,7 +66,7 @@ void Communication::startTransmitLoop()
   {
    
     // server_.transmit();
-    sleep(1);
+    // sleep(1);
   }
 }
 
@@ -65,8 +74,8 @@ void Communication::startReceiveLoop()
 {
   while(1)
   {
-    // server_.FromGC()
-    sleep(1);
+    server_.receiveGCData();
+    //sleep(1);
   }
 }
 

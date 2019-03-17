@@ -57,90 +57,90 @@ include CMakeFiles/mymodule.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mymodule.dir/flags.make
 
-CMakeFiles/mymodule.dir/communication.cpp.o: CMakeFiles/mymodule.dir/flags.make
-CMakeFiles/mymodule.dir/communication.cpp.o: ../communication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mymodule.dir/communication.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/communication.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/communication.cpp
+CMakeFiles/mymodule.dir/src/communication.cpp.o: CMakeFiles/mymodule.dir/flags.make
+CMakeFiles/mymodule.dir/src/communication.cpp.o: ../src/communication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mymodule.dir/src/communication.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/src/communication.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/src/communication.cpp
 
-CMakeFiles/mymodule.dir/communication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/communication.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/communication.cpp > CMakeFiles/mymodule.dir/communication.cpp.i
+CMakeFiles/mymodule.dir/src/communication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/src/communication.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/src/communication.cpp > CMakeFiles/mymodule.dir/src/communication.cpp.i
 
-CMakeFiles/mymodule.dir/communication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/communication.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/communication.cpp -o CMakeFiles/mymodule.dir/communication.cpp.s
+CMakeFiles/mymodule.dir/src/communication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/src/communication.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/src/communication.cpp -o CMakeFiles/mymodule.dir/src/communication.cpp.s
 
-CMakeFiles/mymodule.dir/communication.cpp.o.requires:
+CMakeFiles/mymodule.dir/src/communication.cpp.o.requires:
 
-.PHONY : CMakeFiles/mymodule.dir/communication.cpp.o.requires
+.PHONY : CMakeFiles/mymodule.dir/src/communication.cpp.o.requires
 
-CMakeFiles/mymodule.dir/communication.cpp.o.provides: CMakeFiles/mymodule.dir/communication.cpp.o.requires
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.o.provides.build
-.PHONY : CMakeFiles/mymodule.dir/communication.cpp.o.provides
+CMakeFiles/mymodule.dir/src/communication.cpp.o.provides: CMakeFiles/mymodule.dir/src/communication.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/communication.cpp.o.provides.build
+.PHONY : CMakeFiles/mymodule.dir/src/communication.cpp.o.provides
 
-CMakeFiles/mymodule.dir/communication.cpp.o.provides.build: CMakeFiles/mymodule.dir/communication.cpp.o
-
-
-CMakeFiles/mymodule.dir/main.cpp.o: CMakeFiles/mymodule.dir/flags.make
-CMakeFiles/mymodule.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mymodule.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/main.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/main.cpp
-
-CMakeFiles/mymodule.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/main.cpp > CMakeFiles/mymodule.dir/main.cpp.i
-
-CMakeFiles/mymodule.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/main.cpp -o CMakeFiles/mymodule.dir/main.cpp.s
-
-CMakeFiles/mymodule.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/mymodule.dir/main.cpp.o.requires
-
-CMakeFiles/mymodule.dir/main.cpp.o.provides: CMakeFiles/mymodule.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/mymodule.dir/main.cpp.o.provides
-
-CMakeFiles/mymodule.dir/main.cpp.o.provides.build: CMakeFiles/mymodule.dir/main.cpp.o
+CMakeFiles/mymodule.dir/src/communication.cpp.o.provides.build: CMakeFiles/mymodule.dir/src/communication.cpp.o
 
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.o: CMakeFiles/mymodule.dir/flags.make
-CMakeFiles/mymodule.dir/server/src/server.cpp.o: ../server/src/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mymodule.dir/server/src/server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/server/src/server.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp
+CMakeFiles/mymodule.dir/src/main.cpp.o: CMakeFiles/mymodule.dir/flags.make
+CMakeFiles/mymodule.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mymodule.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/src/main.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/src/main.cpp
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/server/src/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp > CMakeFiles/mymodule.dir/server/src/server.cpp.i
+CMakeFiles/mymodule.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/src/main.cpp > CMakeFiles/mymodule.dir/src/main.cpp.i
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/server/src/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp -o CMakeFiles/mymodule.dir/server/src/server.cpp.s
+CMakeFiles/mymodule.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/src/main.cpp -o CMakeFiles/mymodule.dir/src/main.cpp.s
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.o.requires:
+CMakeFiles/mymodule.dir/src/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/mymodule.dir/server/src/server.cpp.o.requires
+.PHONY : CMakeFiles/mymodule.dir/src/main.cpp.o.requires
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.o.provides: CMakeFiles/mymodule.dir/server/src/server.cpp.o.requires
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.o.provides.build
-.PHONY : CMakeFiles/mymodule.dir/server/src/server.cpp.o.provides
+CMakeFiles/mymodule.dir/src/main.cpp.o.provides: CMakeFiles/mymodule.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/mymodule.dir/src/main.cpp.o.provides
 
-CMakeFiles/mymodule.dir/server/src/server.cpp.o.provides.build: CMakeFiles/mymodule.dir/server/src/server.cpp.o
+CMakeFiles/mymodule.dir/src/main.cpp.o.provides.build: CMakeFiles/mymodule.dir/src/main.cpp.o
+
+
+CMakeFiles/mymodule.dir/src/server.cpp.o: CMakeFiles/mymodule.dir/flags.make
+CMakeFiles/mymodule.dir/src/server.cpp.o: ../src/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mymodule.dir/src/server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mymodule.dir/src/server.cpp.o -c /home/vadim/2018/Robocup/Communication/module_works/src/server.cpp
+
+CMakeFiles/mymodule.dir/src/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mymodule.dir/src/server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vadim/2018/Robocup/Communication/module_works/src/server.cpp > CMakeFiles/mymodule.dir/src/server.cpp.i
+
+CMakeFiles/mymodule.dir/src/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mymodule.dir/src/server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vadim/2018/Robocup/Communication/module_works/src/server.cpp -o CMakeFiles/mymodule.dir/src/server.cpp.s
+
+CMakeFiles/mymodule.dir/src/server.cpp.o.requires:
+
+.PHONY : CMakeFiles/mymodule.dir/src/server.cpp.o.requires
+
+CMakeFiles/mymodule.dir/src/server.cpp.o.provides: CMakeFiles/mymodule.dir/src/server.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/server.cpp.o.provides.build
+.PHONY : CMakeFiles/mymodule.dir/src/server.cpp.o.provides
+
+CMakeFiles/mymodule.dir/src/server.cpp.o.provides.build: CMakeFiles/mymodule.dir/src/server.cpp.o
 
 
 # Object files for target mymodule
 mymodule_OBJECTS = \
-"CMakeFiles/mymodule.dir/communication.cpp.o" \
-"CMakeFiles/mymodule.dir/main.cpp.o" \
-"CMakeFiles/mymodule.dir/server/src/server.cpp.o"
+"CMakeFiles/mymodule.dir/src/communication.cpp.o" \
+"CMakeFiles/mymodule.dir/src/main.cpp.o" \
+"CMakeFiles/mymodule.dir/src/server.cpp.o"
 
 # External object files for target mymodule
 mymodule_EXTERNAL_OBJECTS =
 
-sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/communication.cpp.o
-sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/main.cpp.o
-sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/server/src/server.cpp.o
+sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/src/communication.cpp.o
+sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/src/main.cpp.o
+sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/src/server.cpp.o
 sdk/lib/naoqi/libmymodule.so: CMakeFiles/mymodule.dir/build.make
 sdk/lib/naoqi/libmymodule.so: /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/lib/libalproxies.so
 sdk/lib/naoqi/libmymodule.so: /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/lib/libalcommon.so
@@ -186,9 +186,9 @@ CMakeFiles/mymodule.dir/build: sdk/lib/naoqi/libmymodule.so
 
 .PHONY : CMakeFiles/mymodule.dir/build
 
-CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/communication.cpp.o.requires
-CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/main.cpp.o.requires
-CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/server/src/server.cpp.o.requires
+CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/src/communication.cpp.o.requires
+CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/src/main.cpp.o.requires
+CMakeFiles/mymodule.dir/requires: CMakeFiles/mymodule.dir/src/server.cpp.o.requires
 
 .PHONY : CMakeFiles/mymodule.dir/requires
 

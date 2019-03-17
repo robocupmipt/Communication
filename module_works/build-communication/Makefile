@@ -169,86 +169,86 @@ mymodule/fast:
 	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/build
 .PHONY : mymodule/fast
 
-communication.o: communication.cpp.o
+src/communication.o: src/communication.cpp.o
 
-.PHONY : communication.o
-
-# target to build an object file
-communication.cpp.o:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.o
-.PHONY : communication.cpp.o
-
-communication.i: communication.cpp.i
-
-.PHONY : communication.i
-
-# target to preprocess a source file
-communication.cpp.i:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.i
-.PHONY : communication.cpp.i
-
-communication.s: communication.cpp.s
-
-.PHONY : communication.s
-
-# target to generate assembly for a file
-communication.cpp.s:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.s
-.PHONY : communication.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : src/communication.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/communication.cpp.o:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/communication.cpp.o
+.PHONY : src/communication.cpp.o
 
-main.i: main.cpp.i
+src/communication.i: src/communication.cpp.i
 
-.PHONY : main.i
+.PHONY : src/communication.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/communication.cpp.i:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/communication.cpp.i
+.PHONY : src/communication.cpp.i
 
-main.s: main.cpp.s
+src/communication.s: src/communication.cpp.s
 
-.PHONY : main.s
+.PHONY : src/communication.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/communication.cpp.s:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/communication.cpp.s
+.PHONY : src/communication.cpp.s
 
-server/src/server.o: server/src/server.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : server/src/server.o
+.PHONY : src/main.o
 
 # target to build an object file
-server/src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.o
-.PHONY : server/src/server.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-server/src/server.i: server/src/server.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : server/src/server.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-server/src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.i
-.PHONY : server/src/server.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-server/src/server.s: server/src/server.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : server/src/server.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-server/src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.s
-.PHONY : server/src/server.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/server.o: src/server.cpp.o
+
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
 
 # Help Target
 help:
@@ -263,15 +263,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... communication.o"
-	@echo "... communication.i"
-	@echo "... communication.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... server/src/server.o"
-	@echo "... server/src/server.i"
-	@echo "... server/src/server.s"
+	@echo "... src/communication.o"
+	@echo "... src/communication.i"
+	@echo "... src/communication.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 .PHONY : help
 
 
