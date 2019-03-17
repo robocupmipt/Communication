@@ -59,6 +59,8 @@ sys/wait.h
 /home/vadim/2018/Robocup/Communication/module_works/include/communication.hpp
 iostream
 -
+thread
+-
 qi/log.hpp
 -
 unistd.h
