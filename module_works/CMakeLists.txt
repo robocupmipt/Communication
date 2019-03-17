@@ -8,13 +8,9 @@ find_package(qibuild)
 
 # Create a list of source files
 set(_srcs
-    communication.cpp
-    communication.hpp
-    main.cpp
-    ./server/include/server.h
-    ./server/include/message.h
-    ./server/include/udp_config.h
-    ./server/src/server.cpp
+    src/communication.cpp
+    src/main.cpp
+    src/server.cpp
     )
 
 # Create a plugin, that is a shared library, and make

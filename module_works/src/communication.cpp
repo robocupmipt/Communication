@@ -1,4 +1,4 @@
-#include "communication.hpp"
+#include "../include/communication.hpp"
 
 #include <iostream>
 #include <qi/log.hpp>
