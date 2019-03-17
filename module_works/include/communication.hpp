@@ -31,7 +31,11 @@ public:
 
   virtual ~Communication();
 
-  virtual void init();
+  //-----------------------------------------------------------------------------------
+  bool sayWord(const std::string &word);
+  
+  void printGCData();
+  //-----------------------------------------------------------------------------------
 
   // Start transmit.receive
   int startModule();
@@ -39,19 +43,8 @@ public:
   // Start loop transmit/wait/transmit
   void startTransmitLoop();
 
-  // print data dump
-
-  void printGCData();
-
   // Start loop receive/sendState/receive
   void startReceiveLoop();
-
-  // Functions to communicate with Game Controller
-
-  // Transmit data to GameController
-  // bool transmitToGC();
-  // Receive data from GameController
-  // bool receiveFromGC();
 
   // Functions to communicate with other modules
 
@@ -63,8 +56,6 @@ public:
 
   // Write ball position (should be called from CV module)
   void writeBallPosition();
-
-  bool sayWord(const std::string &word);
 
   // Functions to communicate with other robots
 

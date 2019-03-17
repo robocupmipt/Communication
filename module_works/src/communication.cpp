@@ -25,12 +25,6 @@ Communication::~Communication()
   */
 }
 
-void Communication::init()
-{
-
-}
-
-
 bool Communication::sendRobotState()
 {
 
@@ -40,7 +34,6 @@ void Communication::printGCData()
 {
     server_.printGCData();
 }
-
 
 int Communication::startModule()
 {
@@ -52,6 +45,8 @@ int Communication::startModule()
     std::cout << "error occured while fork" << std::endl;
     return -1; /// ?????????????????
   }
+
+  // add std::thread
 
   if(pid == 0) // isChild
     startReceiveLoop();
@@ -76,7 +71,7 @@ void Communication::startReceiveLoop()
   while(1)
   {
     server_.receiveGCData();
-    //sleep(1);
+    
   }
 }
 
