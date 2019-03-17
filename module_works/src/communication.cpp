@@ -11,7 +11,7 @@ Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::
 {
   //setReturn("boolean", "return true if it was succesfully");
   // BIND_METHOD(Communication::sendRobotState);
-
+  functionName("startModule", getName(), "Start Module");
   BIND_METHOD(Communication::startModule);
 }
 
@@ -20,7 +20,7 @@ Communication::~Communication()
   std::cout << "destructor called" << std::endl;
 }
 
-bool Communication::sendRobotState()
+void Communication::sayGameState()
 {
   switch(gameState)
   {
@@ -42,13 +42,17 @@ bool Communication::sendRobotState()
   }
 }
 
+bool Communication::sendRobotState()
+{
+  sayGameState();
+}
+
 void Communication::printGCData()
 {
     server_.printGCData();
 }
 
-
-int Communication::startModule()
+void Communication::startModule()
 {
 
   std::thread receive (&Communication::receiveLoop, this);
@@ -76,6 +80,7 @@ void Communication::receiveLoop()
   while(1)
   {
     server_.receiveGCData();
+    server_.printGCData();
     checkState();
   }
 }

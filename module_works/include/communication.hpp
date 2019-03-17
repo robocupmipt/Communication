@@ -24,6 +24,7 @@ public:
   GameState currentGameState = finished, gameState;
 
   void checkState();
+  void sayGameState();
 
   //-----------------------------------------------------------------------------------
   bool sayWord(const std::string &word);
@@ -35,7 +36,7 @@ public:
 * Start transmit.receive
 * Attention! This function uses std::thread!
 */
-  int startModule();
+  void startModule();
 
   // Start loop transmit/wait/transmit
   void transmitLoop();
