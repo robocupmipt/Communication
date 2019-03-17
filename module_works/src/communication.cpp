@@ -12,7 +12,8 @@ Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::
   : AL::ALModule(broker, name), tts_(getParentBroker()), server_()
 {
   //setReturn("boolean", "return true if it was succesfully");
-  BIND_METHOD(Communication::sendRobotState);
+  // BIND_METHOD(Communication::sendRobotState);
+  BIND_METHOD(Communication::startModule);
 }
 
 Communication::~Communication()
