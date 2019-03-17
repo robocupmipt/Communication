@@ -37,11 +37,14 @@ public:
 
   //-----------------------------------------------------------------------------------
   bool sayWord(const std::string &word);
-  
+
   void printGCData();
   //-----------------------------------------------------------------------------------
 
-  // Start transmit.receive
+/*
+* Start transmit.receive
+* Attention! This function uses std::thread!
+*/
   int startModule();
 
   // Start loop transmit/wait/transmit
