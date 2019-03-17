@@ -1,7 +1,7 @@
 #include "../include/communication.hpp"
 
-
 #include <iostream>
+#include <thread>
 #include <qi/log.hpp>
 #include <unistd.h>
 
@@ -35,9 +35,20 @@ void Communication::printGCData()
     server_.printGCData();
 }
 
+
 int Communication::startModule()
 {
 
+  std::thread receive (&Communication::receiveLoop, this);
+  std::thread send    (&Communication::transmitLoop, this);
+
+  std::cout << "executed succesfully" << std::endl;
+
+  send.join();
+  receive.join();
+
+  std::cout << "completed" << std::endl;
+/*
   pid_t pid = fork();
 
   if(pid == -1)
@@ -49,14 +60,19 @@ int Communication::startModule()
   // add std::thread
 
   if(pid == 0) // isChild
+  {
     startReceiveLoop();
+  }
   else
+  {
     startTransmitLoop();
+  }
   return 0;
+  */
 
 }
 
-void Communication::startTransmitLoop()
+void Communication::transmitLoop()
 {
   while(1)
   {
@@ -66,7 +82,7 @@ void Communication::startTransmitLoop()
   }
 }
 
-void Communication::startReceiveLoop()
+void Communication::receiveLoop()
 {
   while(1)
   {
