@@ -65,7 +65,7 @@ Both of these features didn't work properly.
 Then we rewrote a Communication module with new toolchain and now It works!  
 We creates a connection dump to see the data transmission between robot & PC with GC. 
 
-![UDP TRANSMISSION DUMP](https://github.com/SokolovVadim/Communication/blob/master/module/Dump_screen.jpg)
+![UDP TRANSMISSION DUMP](https://github.com/SokolovVadim/Communication/blob/master/doc/Dump_screen.jpg)
 
 # Current task  
 + write a wrapper class which provides reading, writing and parsing data  
