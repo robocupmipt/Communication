@@ -67,6 +67,12 @@ We creates a connection dump to see the data transmission between robot & PC wit
 
 ![UDP TRANSMISSION DUMP](https://github.com/SokolovVadim/Communication/blob/master/doc/Dump_screen.jpg)
 
-# Current task  
+# Already done task  
 + write a wrapper class which provides reading, writing and parsing data  
 + execute the program from nao robot
+
+# Achievements
+We have already write a wrapper class which is now a member of Communication class  
+We tested our module with remote connection on NAO robot  
+Now we are to run a binary file on NAO
+
