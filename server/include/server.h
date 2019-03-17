@@ -12,17 +12,17 @@ class Server
 
   ~Server();
 
-  // To receive
+  //-------- To receive ----------//
 
-  struct GameControlData buf; // just buffer to recieve
-  int n;                      // number of received bytes
-
-  struct GameControlData gameControldata;
+  struct GameControlData receiveBuf; // just buffer to recieve
 
   void receiveGCData();
-  void printBuf();
+  void printGCData();
 
-  // To answer
+  struct GameControlData gameControlData;
+  void checkBufAndCopy();
+
+  //--------- To answer ----------//
 
   struct ReturnData returnData;
 
@@ -30,20 +30,19 @@ class Server
 
   private:
 
-  // To configure socket
+  //------- To configure socket --------//
 
   int sockfd = 0;
-  bool isAlWorks = true;
 
   void createSocket();
   void bindSocket();
 
-  // To configure addresses
-
-  void addressesConfig();
+  //---------- To configure address ------------//
 
   struct sockaddr_in servaddr, cliaddr; // struct for addresses
-  int clilen;
+
+  // Config serv address
+  void servAddressConfig();
 };
 
 #endif /* SERVER_H */

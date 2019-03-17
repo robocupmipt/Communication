@@ -42,7 +42,7 @@ struct GameControlData
 
 struct ReturnData
 {
-  char header[4];
+  char header[4] = {'R', 'G', 'r', 't'};
   uint8_t version;
   uint8_t team;    // team number
   uint8_t player;  // player number starts with 1

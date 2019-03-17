@@ -7,7 +7,7 @@ int main()
   while(1)
   {
     server.receiveGCData();
-    server.printBuf();
+    server.printGCData();
   }
 
   return 0;
