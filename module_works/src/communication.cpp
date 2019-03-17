@@ -11,16 +11,13 @@ Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::
 {
   //setReturn("boolean", "return true if it was succesfully");
   // BIND_METHOD(Communication::sendRobotState);
+
   BIND_METHOD(Communication::startModule);
 }
 
 Communication::~Communication()
 {
   std::cout << "destructor called" << std::endl;
-  /*
-  delete[] tts_;
-  delete broker;
-  */
 }
 
 bool Communication::sendRobotState()
@@ -69,7 +66,6 @@ void Communication::transmitLoop()
 {
   while(1)
   {
-   
     // server_.transmit();
     // sleep(1);
   }

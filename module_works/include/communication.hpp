@@ -8,18 +8,8 @@
 
 namespace AL
 {
-  // This is a forward declaration of AL:ALBroker which
-  // avoids including <alcommon/albroker.h> in this header
   class ALBroker;
 }
-
-/**
- * This class inherits AL::ALModule. This allows it to bind methods
- * and be run as a remote executable within NAOqi
- */
-
-
-// class Server;
 
 //-----------------------------------------------------------------------------------
 
