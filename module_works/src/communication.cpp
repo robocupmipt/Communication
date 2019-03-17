@@ -27,7 +27,24 @@ Communication::~Communication()
 
 bool Communication::sendRobotState()
 {
-
+  switch(gameState)
+  {
+    case initial:
+      sayWord("initial");
+      break;
+    case ready:
+      sayWord("ready");
+      break;
+    case set:
+      sayWord("set");
+      break;
+    case playing:
+      sayWord("playing");
+      break;
+    case finished:
+      sayWord("finished");
+      break;
+  }
 }
 
 void Communication::printGCData()
@@ -49,14 +66,14 @@ int Communication::startModule()
   // add std::thread
 
   if(pid == 0) // isChild
-    startReceiveLoop();
+    receiveLoop();
   else
-    startTransmitLoop();
+    transmitLoop();
   return 0;
 
 }
 
-void Communication::startTransmitLoop()
+void Communication::transmitLoop()
 {
   while(1)
   {
@@ -66,28 +83,24 @@ void Communication::startTransmitLoop()
   }
 }
 
-void Communication::startReceiveLoop()
+void Communication::receiveLoop()
 {
   while(1)
   {
     server_.receiveGCData();
-    
+    checkState();
   }
 }
 
-/*
-bool Communication::transmitToGC()
+void Communication::checkState()
 {
-  std::cout << "transmit succesfully.\n";
+    gameState = server_.getGameState();
+    if(gameState != currentGameState)
+    {
+      sendRobotState();
+      currentGameState = gameState;
+    }
 }
-*/
-
-/*
-bool Communication::receiveFromGC()
-{
-  std::cout << "receive succesfully.\n";
-}
-*/
 
 bool Communication::sayWord(const std::string& word){
   std::cout << "Saying the phrase in the console..." << std::endl;
@@ -105,3 +118,5 @@ bool Communication::sayWord(const std::string& word){
     qiLogError("module.example") << "Could not get proxy to ALTextToSpeech" << std::endl;
   }
 }
+
+

@@ -118,3 +118,7 @@ void Server::printGCData()
   std::cout << "END OF MESSAGE IN BUFFER\n";
 }
 
+GameState Server::getGameState() const
+{
+  return (GameState)gameControlData.state;
+}

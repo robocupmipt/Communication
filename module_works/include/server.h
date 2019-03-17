@@ -4,31 +4,42 @@
 #include"udp_config.h"
 #include"message.h"
 
+enum GameState
+{
+  initial = 0,
+  ready,
+  set,
+  playing,
+  finished
+};
+
 class Server
 {
   public:
 
-  Server();
-
+  Server(); 
   ~Server();
+
+  void receiveGCData();
+  void printGCData();
+
+  GameState getGameState() const;
+
+  void sendReturnData();
+
+  private:
 
   //-------- To receive ----------//
 
   struct GameControlData receiveBuf; // just buffer to recieve
 
-  void receiveGCData();
-  void printGCData();
-
   struct GameControlData gameControlData;
+
   void checkBufAndCopy();
 
   //--------- To answer ----------//
 
   struct ReturnData returnData;
-
-  void sendReturnData();
-
-  private:
 
   //------- To configure socket --------//
 

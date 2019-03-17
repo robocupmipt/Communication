@@ -31,6 +31,10 @@ public:
 
   virtual ~Communication();
 
+  GameState currentGameState = finished, gameState;
+
+  void checkState();
+
   //-----------------------------------------------------------------------------------
   bool sayWord(const std::string &word);
   
@@ -41,10 +45,10 @@ public:
   int startModule();
 
   // Start loop transmit/wait/transmit
-  void startTransmitLoop();
+  void transmitLoop();
 
   // Start loop receive/sendState/receive
-  void startReceiveLoop();
+  void receiveLoop();
 
   // Functions to communicate with other modules
 
