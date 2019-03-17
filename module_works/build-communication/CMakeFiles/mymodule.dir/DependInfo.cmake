@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/vadim/2018/Robocup/Communication/module_works/communication.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/communication.cpp.o"
   "/home/vadim/2018/Robocup/Communication/module_works/main.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/main.cpp.o"
-  "/home/vadim/2018/Robocup/Communication/module_works/mymodule.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/mymodule.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

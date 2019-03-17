@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/mymodule.dir/mymodule.cpp.o"
+  "CMakeFiles/mymodule.dir/communication.cpp.o"
   "CMakeFiles/mymodule.dir/main.cpp.o"
   "sdk/lib/naoqi/libmymodule.pdb"
   "sdk/lib/naoqi/libmymodule.so"

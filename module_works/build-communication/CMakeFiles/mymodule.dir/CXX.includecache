@@ -6,9 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/home/vadim/2018/Robocup/Communication/module_works/communication.cpp
+communication.hpp
+/home/vadim/2018/Robocup/Communication/module_works/communication.hpp
+iostream
+-
+qi/log.hpp
+-
+
+/home/vadim/2018/Robocup/Communication/module_works/communication.hpp
+iostream
+-
+alcommon/albroker.h
+-
+alproxies/altexttospeechproxy.h
+-
+
 /home/vadim/2018/Robocup/Communication/module_works/main.cpp
-mymodule.h
-/home/vadim/2018/Robocup/Communication/module_works/mymodule.h
+communication.hpp
+/home/vadim/2018/Robocup/Communication/module_works/communication.hpp
 boost/shared_ptr.hpp
 -
 alcommon/albroker.h
@@ -16,22 +32,6 @@ alcommon/albroker.h
 alcommon/albrokermanager.h
 -
 alcommon/altoolsmain.h
--
-
-/home/vadim/2018/Robocup/Communication/module_works/mymodule.cpp
-mymodule.h
-/home/vadim/2018/Robocup/Communication/module_works/mymodule.h
-iostream
--
-qi/log.hpp
--
-
-/home/vadim/2018/Robocup/Communication/module_works/mymodule.h
-iostream
--
-alcommon/albroker.h
--
-alproxies/altexttospeechproxy.h
 -
 
 /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/include/alcommon/albroker.h

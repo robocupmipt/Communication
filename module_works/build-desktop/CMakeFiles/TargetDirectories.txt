@@ -1,7 +1,0 @@
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/edit_cache.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/install/strip.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/mymodule.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/rebuild_cache.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/list_install_components.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/install/local.dir
-/home/vadim/2018/Robocup/tutorials/2_local-module-creation/mymodule-example/build-desktop/CMakeFiles/install.dir

@@ -169,6 +169,33 @@ mymodule/fast:
 	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/build
 .PHONY : mymodule/fast
 
+communication.o: communication.cpp.o
+
+.PHONY : communication.o
+
+# target to build an object file
+communication.cpp.o:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.o
+.PHONY : communication.cpp.o
+
+communication.i: communication.cpp.i
+
+.PHONY : communication.i
+
+# target to preprocess a source file
+communication.cpp.i:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.i
+.PHONY : communication.cpp.i
+
+communication.s: communication.cpp.s
+
+.PHONY : communication.s
+
+# target to generate assembly for a file
+communication.cpp.s:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/communication.cpp.s
+.PHONY : communication.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -196,33 +223,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-mymodule.o: mymodule.cpp.o
-
-.PHONY : mymodule.o
-
-# target to build an object file
-mymodule.cpp.o:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/mymodule.cpp.o
-.PHONY : mymodule.cpp.o
-
-mymodule.i: mymodule.cpp.i
-
-.PHONY : mymodule.i
-
-# target to preprocess a source file
-mymodule.cpp.i:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/mymodule.cpp.i
-.PHONY : mymodule.cpp.i
-
-mymodule.s: mymodule.cpp.s
-
-.PHONY : mymodule.s
-
-# target to generate assembly for a file
-mymodule.cpp.s:
-	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/mymodule.cpp.s
-.PHONY : mymodule.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,12 +236,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... install/local"
 	@echo "... install"
+	@echo "... communication.o"
+	@echo "... communication.i"
+	@echo "... communication.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... mymodule.o"
-	@echo "... mymodule.i"
-	@echo "... mymodule.s"
 .PHONY : help
 
 
