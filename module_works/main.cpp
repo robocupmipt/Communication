@@ -1,4 +1,4 @@
-#include "mymodule.h"
+#include "communication.hpp"
 #include <boost/shared_ptr.hpp>
 #include <alcommon/albroker.h>
 #include <alcommon/albrokermanager.h>

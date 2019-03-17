@@ -8,8 +8,8 @@ find_package(qibuild)
 
 # Create a list of source files
 set(_srcs
-    mymodule.cpp
-    mymodule.h
+    communication.cpp
+    communication.hpp
     main.cpp)
 
 # Create a plugin, that is a shared library, and make
