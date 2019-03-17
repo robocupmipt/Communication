@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vadim/2018/Robocup/Communication/module_works/communication.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/communication.cpp.o"
   "/home/vadim/2018/Robocup/Communication/module_works/main.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/main.cpp.o"
+  "/home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp" "/home/vadim/2018/Robocup/Communication/module_works/build-communication/CMakeFiles/mymodule.dir/server/src/server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

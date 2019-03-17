@@ -3147,3 +3147,5 @@ CMakeFiles/mymodule.dir/main.cpp.o
  /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/include/qi/types.hpp
  /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/include/qi/url.hpp
  /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/include/qi/utility.hpp
+CMakeFiles/mymodule.dir/server/src/server.cpp.o
+ /home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp

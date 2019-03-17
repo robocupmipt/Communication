@@ -34,6 +34,12 @@ alcommon/albrokermanager.h
 alcommon/altoolsmain.h
 -
 
+/home/vadim/2018/Robocup/Communication/module_works/server/src/server.cpp
+/home/vadim/include/server.h
+-
+iostream
+-
+
 /home/vadim/Downloads/naoqi-sdk-2.8.3.54-linux64/include/alcommon/albroker.h
 list
 -

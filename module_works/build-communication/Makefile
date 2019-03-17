@@ -223,6 +223,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+server/src/server.o: server/src/server.cpp.o
+
+.PHONY : server/src/server.o
+
+# target to build an object file
+server/src/server.cpp.o:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.o
+.PHONY : server/src/server.cpp.o
+
+server/src/server.i: server/src/server.cpp.i
+
+.PHONY : server/src/server.i
+
+# target to preprocess a source file
+server/src/server.cpp.i:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.i
+.PHONY : server/src/server.cpp.i
+
+server/src/server.s: server/src/server.cpp.s
+
+.PHONY : server/src/server.s
+
+# target to generate assembly for a file
+server/src/server.cpp.s:
+	$(MAKE) -f CMakeFiles/mymodule.dir/build.make CMakeFiles/mymodule.dir/server/src/server.cpp.s
+.PHONY : server/src/server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,6 +269,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... server/src/server.o"
+	@echo "... server/src/server.i"
+	@echo "... server/src/server.s"
 .PHONY : help
 
 
