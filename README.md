@@ -74,5 +74,14 @@ We creates a connection dump to see the data transmission between robot & PC wit
 # Achievements
 We have already write a wrapper class which is now a member of Communication class  
 We tested our module with remote connection on NAO robot  
-Now we are to run a binary file on NAO
+After that we turned to uploading the binary files .so onto NAO robot
+There was a problem with a loop in constructor, but we found a solution  
+The GC and NAO created a communication and we could receive messages from NAO  
+to PC and set states of NAO by GC interface  
+
+![GC TEST](https://github.com/SokolovVadim/Communication/blob/master/doc/TestGC.jpg)
+
+TODO:  
+Now we have to add a virtual function init which is inherited from the based class AlModule  
+
 
