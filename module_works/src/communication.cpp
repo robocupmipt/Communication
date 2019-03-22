@@ -44,7 +44,9 @@ void Communication::sayGameState()
 
 bool Communication::sendRobotState()
 {
-  sayGameState();
+  std::cout << "sendRobotState\n";
+  AL::ALProxy proxyStrategy_(broker, "StrategyModule");
+  proxyStrategy_.callVoid("UpdateGameState", 1);
 }
 
 void Communication::printGCData()
@@ -54,7 +56,6 @@ void Communication::printGCData()
 
 void Communication::startModule()
 {
-
   std::thread receive (&Communication::receiveLoop, this);
   std::thread send    (&Communication::transmitLoop, this);
 

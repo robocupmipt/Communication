@@ -75,9 +75,7 @@ int main(int argc, char* argv[])
    * type res = proxy.call<type>(<bind_methode>, <parameter>, ...);
    */
 
-  // Create a proxy to MyModule
   AL::ALProxy proxy(broker, "Communication");
-
   proxy.callVoid("startModule");
 
   return 0;
