@@ -1,23 +1,21 @@
 #include "../include/communication.hpp"
-
 #include <iostream>
 #include <thread>
 #include <qi/log.hpp>
-#include <unistd.h>
-
-
-//--------------------------------------------------------------------------------------------------------
+#include <unistd.h> 
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_()
 {
-  //setReturn("boolean", "return true if it was succesfully");
-  // BIND_METHOD(Communication::sendRobotState);
-  functionName("startModule", getName(), "Start Module");
-  BIND_METHOD(Communication::startModule);
+
 }
 
 Communication::~Communication()
 {
-  std::cout << "destructor called" << std::endl;
+
+}
+
+void Communication::init()
+{
+  startModule();
 }
 
 void Communication::sayGameState()
@@ -45,8 +43,11 @@ void Communication::sayGameState()
 bool Communication::sendRobotState()
 {
   std::cout << "sendRobotState\n";
+
+  boost::shared_ptr<AL::ALBroker> broker;
+  broker = AL::ALBroker::createBroker("test", "0.0.0.0", 54000, "192.168.1.60", 9559);
   AL::ALProxy proxyStrategy_(broker, "StrategyModule");
-  proxyStrategy_.callVoid("UpdateGameState", 1);
+  proxyStrategy_.callVoid("UpdateGameState", (int)gameState);
 }
 
 void Communication::printGCData()
@@ -91,26 +92,14 @@ void Communication::checkState()
     gameState = server_.getGameState();
     if(gameState != currentGameState)
     {
-      sendRobotState();
       currentGameState = gameState;
+      sendRobotState();
     }
 }
 
-bool Communication::sayWord(const std::string& word){
-  std::cout << "Saying the phrase in the console..." << std::endl;
-  std::cout << word << std::endl;
-  try
-  {
-
-    /** Call the say method. */
-    tts_.say(word);
-    /** Note: on the desktop you won't hear anything, but you should see
-    * some logs on the naoqi you are connected to. */
-  }
-  catch(const AL::ALError&)
-  {
-    qiLogError("module.example") << "Could not get proxy to ALTextToSpeech" << std::endl;
-  }
+bool Communication::sayWord(const std::string& word)
+{
+  tts_.say(word);
 }
 
 

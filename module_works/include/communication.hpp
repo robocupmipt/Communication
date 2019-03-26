@@ -19,6 +19,8 @@ public:
   Communication() = delete;
   Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string &name);
 
+  virtual void init();
+
   virtual ~Communication();
 
   GameState currentGameState = finished, gameState;
@@ -26,11 +28,8 @@ public:
   void checkState();
   void sayGameState();
 
-  //-----------------------------------------------------------------------------------
   bool sayWord(const std::string &word);
-
   void printGCData();
-  //-----------------------------------------------------------------------------------
 
 /*
 * Start transmit.receive
@@ -61,7 +60,6 @@ public:
 
 private:
   AL::ALTextToSpeechProxy         tts_;
-  boost::shared_ptr<AL::ALBroker> broker;
   Server                          server_;
 };
 
