@@ -4,9 +4,8 @@
 #include <qi/log.hpp>
 #include <unistd.h> 
 
-Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_()
+Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_(), fMemoryProxy(getParentBroker())
 {
-
 }
 
 Communication::~Communication()
@@ -41,14 +40,18 @@ void Communication::sayGameState()
   }
 }
 
-bool Communication::sendRobotState()
+void Communication::sendRobotState()
 {
-  std::cout << "sendRobotState\n";
-
+  std::cout << "raiseEvent\n";
+  fMemoryProxy.raiseEvent("GameStateChanged", (int)gameState);
+  std::cout << "Event raised\n";
+  sayGameState();
+  /*
   boost::shared_ptr<AL::ALBroker> broker;
   broker = AL::ALBroker::createBroker("test", "0.0.0.0", 54000, "192.168.1.60", 9559);
   AL::ALProxy proxyStrategy_(broker, "StrategyModule");
   proxyStrategy_.callVoid("UpdateGameState", (int)gameState);
+  */
 }
 
 void Communication::printGCData()
@@ -83,7 +86,7 @@ void Communication::receiveLoop()
   while(1)
   {
     server_.receiveGCData();
-    server_.printGCData();
+    //server_.printGCData();
     checkState();
   }
 }
