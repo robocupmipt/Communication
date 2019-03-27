@@ -6,7 +6,6 @@
 
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_(), fMemoryProxy(getParentBroker())
 {
-
 }
 
 Communication::~Communication()
@@ -43,9 +42,10 @@ void Communication::sayGameState()
 
 void Communication::sendRobotState()
 {
-  std::cout << "sendRobotState\n";
-
+  std::cout << "raiseEvent\n";
   fMemoryProxy.raiseEvent("GameStateChanged", (int)gameState);
+  std::cout << "Event raised\n";
+  sayGameState();
   /*
   boost::shared_ptr<AL::ALBroker> broker;
   broker = AL::ALBroker::createBroker("test", "0.0.0.0", 54000, "192.168.1.60", 9559);
@@ -86,7 +86,7 @@ void Communication::receiveLoop()
   while(1)
   {
     server_.receiveGCData();
-    server_.printGCData();
+    //server_.printGCData();
     checkState();
   }
 }
