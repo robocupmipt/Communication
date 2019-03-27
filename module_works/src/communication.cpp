@@ -3,6 +3,7 @@
 #include <thread>
 #include <qi/log.hpp>
 #include <unistd.h> 
+
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_()
 {
 
