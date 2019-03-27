@@ -5,6 +5,9 @@
 #include <alcommon/albroker.h>
 #include <alproxies/altexttospeechproxy.h>
 #include "../include/server.h"
+#include <boost/shared_ptr.hpp>
+#include <alcommon/almodule.h>
+#include <alproxies/almemoryproxy.h>
 
 namespace AL
 {
@@ -46,7 +49,7 @@ public:
   // Functions to communicate with other modules
 
   // Send current robot state to Strategy module
-  bool sendRobotState();
+  void sendRobotState();
 
   // Write robot position (should be called from Localization module)
   void writeRobotPosition();
@@ -61,6 +64,7 @@ public:
 private:
   AL::ALTextToSpeechProxy         tts_;
   Server                          server_;
+  AL::ALMemoryProxy fMemoryProxy;
 };
 
 #endif // MY_MODULE_H
