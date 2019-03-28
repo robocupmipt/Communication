@@ -12,7 +12,6 @@
 #include<stdlib.h>
 
 #include<iostream>
-#include"queue_config.h"
 #include"data.h"
 #include<string>
 
@@ -27,7 +26,7 @@ do {								\
 		printf("%s succeeded\n", nameFunction);		\
 } while(0)							\
 
-#define FILE_KEY "key"
+#define FILE_KEY "../key"
 #define PERMISSION 0777
 #define FROM_COMMUNICATION_TO_STRATEGY 1
 #define FROM_STRATEGY_TO_COMMUNICATION 2

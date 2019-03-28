@@ -16,7 +16,6 @@ Communication::~Communication()
 void Communication::init()
 {
   message_.InitMsg();
-  //message_.StartReceiveLoop();
 
   startModule();
 }
