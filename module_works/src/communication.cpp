@@ -4,8 +4,9 @@
 #include <qi/log.hpp>
 #include <unistd.h> 
 
-Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_(), fMemoryProxy(getParentBroker())
+Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_(), fMemoryProxy(getParentBroker()), proxyStrategy_(getParentBroker(), "StrategyModule")
 {
+
 }
 
 Communication::~Communication()
@@ -42,16 +43,23 @@ void Communication::sayGameState()
 
 void Communication::sendRobotState()
 {
-  std::cout << "raiseEvent\n";
-  fMemoryProxy.raiseEvent("GameStateChanged", (int)gameState);
-  std::cout << "Event raised\n";
-  sayGameState();
-  /*
-  boost::shared_ptr<AL::ALBroker> broker;
-  broker = AL::ALBroker::createBroker("test", "0.0.0.0", 54000, "192.168.1.60", 9559);
-  AL::ALProxy proxyStrategy_(broker, "StrategyModule");
-  proxyStrategy_.callVoid("UpdateGameState", (int)gameState);
-  */
+  std::cout << "sendRobotState\n";
+
+  while(1)
+  {
+    try
+    {
+      proxyStrategy_.callVoid("UpdateGameState", (int)gameState);
+      std::cout << "it's ok" << std::endl;
+      break;
+    }
+    catch(const AL::ALError& e)
+    {
+      std::cout << e.what() << std::endl;
+      std::cout << "try to create new proxy" << std::endl;
+      proxyStrategy_ = AL::ALProxy(getParentBroker(), "StrategyModule");
+    }
+  }
 }
 
 void Communication::printGCData()

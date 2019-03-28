@@ -8,6 +8,7 @@
 #include <boost/shared_ptr.hpp>
 #include <alcommon/almodule.h>
 #include <alproxies/almemoryproxy.h>
+#include <alcommon/alproxy.h>
 
 namespace AL
 {
@@ -33,6 +34,8 @@ public:
 
   bool sayWord(const std::string &word);
   void printGCData();
+
+  void callback(const std::string &key, const AL::ALValue &value, const AL::ALValue &msg);
 
 /*
 * Start transmit.receive
@@ -65,6 +68,7 @@ private:
   AL::ALTextToSpeechProxy         tts_;
   Server                          server_;
   AL::ALMemoryProxy fMemoryProxy;
+  AL::ALProxy proxyStrategy_;
 };
 
 #endif // MY_MODULE_H
