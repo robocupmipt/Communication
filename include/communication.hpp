@@ -5,6 +5,7 @@
 #include <alcommon/albroker.h>
 #include <alproxies/altexttospeechproxy.h>
 #include "../include/server.h"
+#include "../include/message.hpp"
 #include <boost/shared_ptr.hpp>
 #include <alcommon/almodule.h>
 #include <alproxies/almemoryproxy.h>
@@ -65,6 +66,7 @@ private:
   AL::ALTextToSpeechProxy         tts_;
   Server                          server_;
   AL::ALMemoryProxy fMemoryProxy;
+  Message message_;
 };
 
 #endif // MY_MODULE_H
