@@ -2,16 +2,7 @@
 #define SERVER_H
 
 #include"udp_config.h"
-#include"message.h"
-
-enum GameState
-{
-  initial = 0,
-  ready,
-  set,
-  playing,
-  finished
-};
+#include"data.h"
 
 class Server
 {

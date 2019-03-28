@@ -1,7 +1,16 @@
-#ifndef MESSAGE_H
-#define MESSAGE_H
+#ifndef DATA_H
+#define DATA_H
 
 #define MAX_NUM_PLAYERS             6
+
+enum GameState
+{
+  initial = 0,
+  ready,
+  set,
+  playing,
+  finished
+};
 
 /* rUNSWift Addition: renamed from RobotInfo to PlayerInfo */
 struct PlayerInfo
@@ -48,4 +57,4 @@ struct ReturnData
   uint8_t player;  // player number starts with 1
   uint8_t message; // one of the three messages defined above
 };
-#endif /* MESSAGE_H */
+#endif /* DATA_H */
