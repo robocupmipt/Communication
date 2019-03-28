@@ -46,12 +46,6 @@ void Communication::sendRobotState()
   fMemoryProxy.raiseEvent("GameStateChanged", (int)gameState);
   std::cout << "Event raised\n";
   sayGameState();
-  /*
-  boost::shared_ptr<AL::ALBroker> broker;
-  broker = AL::ALBroker::createBroker("test", "0.0.0.0", 54000, "192.168.1.60", 9559);
-  AL::ALProxy proxyStrategy_(broker, "StrategyModule");
-  proxyStrategy_.callVoid("UpdateGameState", (int)gameState);
-  */
 }
 
 void Communication::printGCData()
