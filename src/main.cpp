@@ -3,7 +3,7 @@
 #include <alcommon/albrokermanager.h>
 #include <alcommon/altoolsmain.h>
 
-#include "../include/Communication.hpp"
+#include "../include/CommunicationModule.hpp"
 
 extern "C"
 {
