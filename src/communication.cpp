@@ -57,28 +57,47 @@ void Communication::printGCData()
 
 void Communication::startModule()
 {
-  std::thread receive (&Communication::receiveLoop, this);
-  std::thread send    (&Communication::transmitLoop, this);
 
   std::cout << "executed succesfully" << std::endl;
 
+  std::thread receive([&](){
+      receiveLoop();
+  });
+
+  std::thread send([&](){
+      transmitLoop();
+  });
+
+  //https://en.cppreference.com/w/cpp/thread/thread/detach
+  receive.detach();
+  send.detach();
+
+  std::cout << "detach completed" << std::endl;
+
+  /*
+  std::thread receive (&Communication::receiveLoop, this);
+  std::thread send    (&Communication::transmitLoop, this);
+
   send.join();
   receive.join();
-
-  std::cout << "completed" << std::endl;
+  */
 }
 
 void Communication::transmitLoop()
 {
+  std::cout << "transmit loop start\n";
+
   while(1)
   {
     // server_.transmit();
-    // sleep(1);
+    sleep(1);
   }
 }
 
 void Communication::receiveLoop()
 {
+  std::cout << "receive loop start\n";
+
   while(1)
   {
     server_.receiveGCData();

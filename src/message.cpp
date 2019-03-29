@@ -60,7 +60,7 @@ bool Message::ReceiveLoop()
 
 	do
   {
-	  int length = msgrcv(msgid_, (struct msg_buf *)&buf, sizeof(InputData), 0, 0);
+	  int length = msgrcv(msgid_, (struct msg_buf *)&buf, sizeof(InputData), inputType_, 0);
 		CHECK("msgrcv", length);
 
     std::cout << "state " << buf.data.state << std::endl;
