@@ -58,7 +58,6 @@ class Message
 
   ~Message();
 
-  /* There are std::threads here */
   bool InitMsg();
 
   bool SendMessage(MessageOutputBuf &buf);
