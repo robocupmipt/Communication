@@ -1,3 +1,7 @@
+//
+// Created by Vladislav Molodtsov on 2019-03-29.
+//
+
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
@@ -12,19 +16,10 @@
 #include<stdlib.h>
 
 #include<iostream>
-#include"data.h"
 #include<string>
 
-#define CHECK(nameFunction, retValue)				\
-do {								\
-	if(retValue == -1)					\
-	{							\
-    perror(nameFunction);\
-    return false;   \
-	}							\
-	else							\
-		printf("%s succeeded\n", nameFunction);		\
-} while(0)							\
+#include"Check.h"
+#include"GCStates.h"
 
 #define FILE_KEY "../key"
 #define PERMISSION 0777
@@ -32,12 +27,13 @@ do {								\
 #define FROM_STRATEGY_TO_COMMUNICATION 2
 
 struct InputData
-{ enum GameState state;
+{ 
+  gamecontroller::GameState state;
 };
 
 struct OutputData
 {
-  enum GameState state;
+  gamecontroller::GameState state;
 };
 
 struct MessageOutputBuf

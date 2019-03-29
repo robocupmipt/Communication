@@ -1,14 +1,23 @@
+//
+// Created by Vladislav Molodtsov on 2019-03-29.
+//
+
 #ifndef MY_MODULE_H
 # define MY_MODULE_H
 
-#include <iostream>
-#include <alcommon/albroker.h>
-#include <alproxies/altexttospeechproxy.h>
-#include "../include/server.h"
-#include "../include/message.hpp"
-#include <boost/shared_ptr.hpp>
-#include <alcommon/almodule.h>
-#include <alproxies/almemoryproxy.h>
+#include<iostream>
+#include<alcommon/albroker.h>
+#include<alproxies/altexttospeechproxy.h>
+#include<boost/shared_ptr.hpp>
+#include<alcommon/almodule.h>
+#include<alproxies/almemoryproxy.h>
+
+#include"Check.h"
+#include"GCStates.h"
+#include"Server.h"
+#include"Message.hpp"
+
+using namespace gamecontroller;
 
 namespace AL
 {
@@ -27,36 +36,36 @@ public:
 
   virtual ~Communication();
 
-  GameState currentGameState = finished, gameState;
+  GameState currentGameState = FINISHED, gameState;
 
-  void checkState();
-  void sayGameState();
+  void CheckState();
+  void SayGameState();
 
-  bool sayWord(const std::string &word);
-  void printGCData();
+  bool SayWord(const std::string &word);
+  void PrintGCData();
 
 /*
 * Start transmit.receive
 * Attention! This function uses std::thread!
 */
-  void startModule();
+  void StartModule();
 
   // Start loop transmit/wait/transmit
-  void transmitLoop();
+  void TransmitLoop();
 
   // Start loop receive/sendState/receive
-  void receiveLoop();
+  void ReceiveLoop();
 
   // Functions to communicate with other modules
 
   // Send current robot state to Strategy module
-  void sendRobotState();
+  void SendRobotState();
 
   // Write robot position (should be called from Localization module)
-  void writeRobotPosition();
+  void WriteRobotPosition();
 
   // Write ball position (should be called from CV module)
-  void writeBallPosition();
+  void WriteBallPosition();
 
   // Functions to communicate with other robots
 
@@ -65,7 +74,6 @@ public:
 private:
   AL::ALTextToSpeechProxy         tts_;
   Server                          server_;
-  AL::ALMemoryProxy fMemoryProxy;
   Message message_;
 };
 

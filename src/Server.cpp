@@ -1,12 +1,16 @@
-#include"../include/server.h"
+//
+// Created by Vladislav Molodtsov on 2019-03-29.
+//
+
+#include"../include/Server.h"
 #include"iostream"
 
 Server::Server()
 {
-  createSocket();
+  CreateSocket();
 
-  servAddressConfig();
-  bindSocket();
+  ServAddressConfig();
+  BindSocket();
 }
 
 Server::~Server()
@@ -14,14 +18,14 @@ Server::~Server()
 
 }
 
-void Server::createSocket()
+bool Server::CreateSocket()
 {
   sockfd = socket(PF_INET, SOCK_DGRAM, 0);
   CHECK("socket", sockfd);
   std::cout << "sockfd = " << sockfd << '\n';
 }
 
-void Server::servAddressConfig()
+bool Server::ServAddressConfig()
 {
   bzero(&cliaddr, sizeof(cliaddr));
   servaddr.sin_family = AF_INET;
@@ -29,7 +33,7 @@ void Server::servAddressConfig()
   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
 }
 
-void Server::bindSocket()
+bool Server::BindSocket()
 {
   if(bind(sockfd, (struct sockaddr *) &servaddr, sizeof(cliaddr)) < 0)
   {
@@ -38,7 +42,7 @@ void Server::bindSocket()
   }
 }
 
-void Server::receiveGCData()
+bool Server::ReceiveGCData()
 {
   int clilen = sizeof(cliaddr);
   int n = recvfrom(sockfd, &receiveBuf, sizeof(receiveBuf) - 1, FLAGS_RECV_FROM, (struct sockaddr *) &cliaddr, (socklen_t *) &clilen);
@@ -46,10 +50,10 @@ void Server::receiveGCData()
   if(n < 0)
     perror("recvfrom");
 
-  checkBufAndCopy();
+  CheckBufAndCopy();
 }
 
-void Server::checkBufAndCopy()
+bool Server::CheckBufAndCopy()
 {
   if(strcmp(receiveBuf.header, "RGme"))
   {
@@ -60,7 +64,7 @@ void Server::checkBufAndCopy()
     std::cout << "Incorrect message received\n";
 }
 
-void Server::sendReturnData()
+bool Server::SendReturnData()
 {
   if(sendto(sockfd, &returnData, sizeof(returnData), FLAGS_SEND_TO, (struct sockaddr *) &cliaddr, sizeof(cliaddr)) < 0)
   {
@@ -68,7 +72,7 @@ void Server::sendReturnData()
   }
 }
 
-void Server::printGCData()
+bool Server::PrintGCData()
 {
   std::cout << "\nPRINT MESSAGE IN BUFFER:\n";
 
@@ -118,7 +122,7 @@ void Server::printGCData()
   std::cout << "END OF MESSAGE IN BUFFER\n";
 }
 
-GameState Server::getGameState() const
+GameState Server::GetGameState() const
 {
   return (GameState)gameControlData.state;
 }

@@ -1,5 +1,9 @@
+//
+// Created by Vladislav Molodtsov on 2019-03-29.
+//
+
 #include"iostream"
-#include"../include/message.hpp"
+#include"../include/Message.hpp"
 #include<thread>
 #include<unistd.h>
 
