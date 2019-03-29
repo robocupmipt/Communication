@@ -49,15 +49,6 @@ struct MessageOutputBuf
   OutputData data;
 };
 
-struct MessageInputBuf
-{
-	long type;  // It's necessary
-
-  /* Next you can write your own data */
-
-  InputData data;
-};
-
 class Message
 {
   public:
@@ -73,10 +64,6 @@ class Message
   bool SendMessage(MessageOutputBuf &buf);
 
   bool SetMessageTypes(int output, int input);
-
-  bool ReceiveLoop();
-
-  bool StartReceiveLoop();
 
   private:
 

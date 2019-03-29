@@ -40,33 +40,6 @@ bool Message::InitMsg()
 	}
 }
 
-bool Message::StartReceiveLoop()
-{
-  std::thread receive (&Message::ReceiveLoop, this);
-
-  receive.join();
-
-  std::cout << "join success\n";
-
-  return true;
-}
-
-bool Message::ReceiveLoop()
-{
-  MessageInputBuf buf;
-  buf.type = inputType_;
-
-  std::cout << "receive loop is started" << std::endl;
-
-	do
-  {
-	  int length = msgrcv(msgid_, (struct msg_buf *)&buf, sizeof(InputData), inputType_, 0);
-		CHECK("msgrcv", length);
-
-    std::cout << "state " << buf.data.state << std::endl;
-	} while(1);
-}
-
 bool Message::SetMessageTypes(int outputType, int inputType)
 {
   outputType_ = outputType;
