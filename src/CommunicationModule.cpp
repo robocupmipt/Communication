@@ -11,8 +11,9 @@
 #include<errno.h>
 #include<stdio.h>
 
+#define FILE_KEY "../key"
+
 #include "../include/CommunicationModule.hpp"
-#include "../include/Message.hpp"
 
 Communication::Communication(boost::shared_ptr<AL::ALBroker> broker, const std::string& name) : AL::ALModule(broker, name), tts_(getParentBroker()), server_(), message_(FROM_COMMUNICATION_TO_STRATEGY, FROM_STRATEGY_TO_COMMUNICATION)
 {
@@ -54,7 +55,7 @@ void Communication::SayGameState()
 
 void Communication::SendRobotState()
 {
-  MessageOutputBuf buf;
+  MessageType<Send> buf;
 
   buf.data.state = currentGameState;
   message_.SendMessage(buf);

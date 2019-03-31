@@ -1,7 +1,6 @@
 //
 // Created by Vladislav Molodtsov on 2019-03-29.
 //
-
 #ifndef MY_MODULE_H
 # define MY_MODULE_H
 
@@ -12,12 +11,15 @@
 #include<alcommon/almodule.h>
 #include<alproxies/almemoryproxy.h>
 
+#define FILE_KEY "../key"
+
 #include"Check.h"
 #include"GCStates.h"
 #include"Server.h"
-#include"Message.hpp"
+#include"Message.h"
 
 using namespace gamecontroller;
+using namespace message;
 
 namespace AL
 {
@@ -74,7 +76,7 @@ public:
 private:
   AL::ALTextToSpeechProxy         tts_;
   Server                          server_;
-  Message message_;
+  Message<MessageType<Send>, MessageType<Receive>> message_;
 };
 
 #endif // MY_MODULE_H
